@@ -1,0 +1,10 @@
+<h1>New game</h1>
+<% if @answer["found"] == false %>
+  <p><%= "Sorry but #{@input} doesn't seem to be a valid English word" %></p>
+<% elsif @letters.split(" ").include?(@input.split("")) == false %>
+  <p><%= "Sorry but #{@input} can't be built out #{@letters.upcase}." %></p>
+<% else %>
+  <%= "Congratulations! #{@input} is a valid English word!" %>
+<% end %>
+<p><%= link_to "Try again!", new_path %></p>
+
